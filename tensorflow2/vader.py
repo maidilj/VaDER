@@ -374,6 +374,8 @@ class VADER:
         # re-scale the loss to the original dims (making sure it balances correctly with the latent loss)
         num = tf.cast(tf.reduce_prod(input_tensor=tf.shape(input=W)), self.float_type)
         den = tf.reduce_sum(input_tensor=W)
+        
+        print(type(num), type(den))
         rec_loss = rec_loss * num / den
         rec_loss = rec_loss * self.D * self.I
 
