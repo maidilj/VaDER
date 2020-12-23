@@ -375,7 +375,7 @@ class VADER:
         num = tf.cast(tf.reduce_prod(input_tensor=tf.shape(input=W)), self.float_type)
         den = tf.reduce_sum(input_tensor=W)
         
-        print(type(num), type(den))
+        print(num.dtype, den.dtype)
         rec_loss = rec_loss * num / den
         rec_loss = rec_loss * self.D * self.I
 
